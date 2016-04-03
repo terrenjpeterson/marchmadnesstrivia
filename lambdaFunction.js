@@ -1,4 +1,4 @@
-**
+/**
  Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
  http://aws.amazon.com/apache2.0/
@@ -28,11 +28,78 @@ var questions = [
         ]
     },
     {
+        "Who won the 2014 NCAA Mens Basketball National Championship?": [
+            "Connecticut",
+            "Wisconsin",
+            "Duke",
+            "Oklahoma",
+            "Georgetown",
+            "North Carolina"
+        ]
+    },
+    {
+        "Who won the 2002 NCAA Mens Basketball National Championship?": [
+            "Maryland",
+            "Wisconsin",
+            "Duke",
+            "Oklahoma",
+            "Georgetown",
+            "North Carolina"
+        ]
+    },
+    {
+        "Who won the 1982 NCAA Mens Basketball National Championship?": [
+            "North Carolina",
+            "Wisconsin",
+            "Duke",
+            "Oklahoma",
+            "Georgetown",
+            "Michigan State"
+        ]
+    },
+    {
+        "Who won the 1994 NCAA Mens Basketball National Championship?": [
+            "Arkansas",
+            "Arizona",
+            "Duke",
+            "Oklahoma",
+            "Georgetown",
+            "North Carolina"
+        ]
+    },
+    {
         "The 2015 NCAA Mens Basketball Final Four was played in:": [
             "Indianapolis",
             "New York City",
             "Boston",
             "Oklahoma City"
+        ]
+    },
+    {
+        "The 1999 NCAA Mens Basketball Final Four was played in:": [
+            "Saint Petersburg, Florida",
+            "Indianapolis",
+            "Charlotte",
+            "Oklahoma City",
+            "Atlanta"
+        ]
+    },
+    {
+        "The 1989 NCAA Mens Basketball Final Four was played in:": [
+            "Seattle",
+            "Indianapolis",
+            "New York City",
+            "Atlanta",
+            "Oklahoma City"
+        ]
+    },
+    {
+        "How many times has The University of Kentucky won the NCAA Mens National Championship?": [
+            "8",
+            "5",
+            "3",
+            "4",
+            "10"
         ]
     },
     {
@@ -76,11 +143,47 @@ var questions = [
         ]
     },
     {
+        "How many consecutive NCAA Men's Basketball National Championships were won by UCLA?": [
+            "7",
+            "9",
+            "6",
+            "5",
+            "4"
+        ]
+    },
+    {
         "What year was the first NCAA Mens Basketball National Championship?": [
             "1939",
             "1923",
             "1913",
             "1931"
+        ]
+    },
+    {
+        "Who was the latest men's team to complete an undefeated college basketball season?": [
+            "Indiana",
+            "Michigan State",
+            "Duke",
+            "Kentucky",
+            "Oklahoma"
+        ]
+    },
+    {
+        "What year was the first women's NCAA basketball tournament?": [
+            "1982",
+            "1967",
+            "1972",
+            "1965",
+            "1977",
+            "1966"
+        ]
+    },
+    {
+        "Who won the first women's NCAA basketball tournament?": [
+            "Louisiana Tech",
+            "Connecticut",
+            "Maryland",
+            "Baylor"
         ]
     },
     {
@@ -99,11 +202,7 @@ exports.handler = function (event, context) {
     try {
         console.log("event.session.application.applicationId=" + event.session.application.applicationId);
 
-        /**
-         * Uncomment this if statement and populate with your skill's application ID to
-         * prevent someone else from configuring a skill that sends requests to this function.
-         */
-
+        // validate that the echo app id matches what has been published
         if (event.session.application.applicationId !== "amzn1.echo-sdk-ams.app.9be8bed4-7e49-455b-b3cc-f711cc89c781") {
             context.fail("Invalid Application ID");
         }
